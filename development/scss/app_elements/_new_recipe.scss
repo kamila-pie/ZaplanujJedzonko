@@ -1,0 +1,228 @@
+@use "sass:color";
+
+.new-recipe-box {
+    // height: 700px;
+    max-width: 1100px;
+    border: 1px dashed $color-deep-grey;
+    margin: 20px;
+    // margin-left: 50px;
+    // margin-top: 50px;
+    background-color: $color-background;
+    color: $color-grey;
+    padding: 20px;
+}
+
+#myModal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 150px;
+    top: 80px;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.recipe-ingredients-parent {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.new-recipe-save-button {
+    background-color: $color-orange;
+    color: white;
+    padding: 10px;
+    font-weight: 700;
+    transition: 0.2s;
+
+    &:hover {
+        background-color: darken($color-orange, 5%);
+        box-shadow: 1px 1px $color-grey;
+    }
+
+    &:active {
+        background-color: darken($color-orange, 15%);
+    }
+}
+
+.new-recipe-main-header {
+    color: $color-orange;
+    font-size: 30px;
+}
+
+.ingredients-list {
+    list-style-type: disc;
+    padding-left: 25px;
+}
+
+ol {
+    list-style-type: decimal;
+    padding-left: 25px;
+}
+
+.instructions-header,
+.ingredients-header {
+    border-bottom: 3px solid $color-grey;
+    width: 450px;
+}
+
+.new-recipe-header-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 6px;
+    border-bottom: 3px solid $color-grey;
+}
+
+.new-recipe-description-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.instructions-list,
+.ingredients-list {
+    overflow: hidden;
+    overflow-y: auto;
+    max-height: 200px;
+}
+
+button {
+    overflow: hidden;
+}
+
+input {
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    border: 1px solid $color-grey;
+}
+
+textarea {
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    border: 1px solid $color-grey;
+    resize: none;
+    margin-right: 1000px;
+    width: 80%;
+    font-family: $font-open-sans;
+}
+
+.new-recipe-description-box {
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    padding-left: 10px;
+}
+
+#recipe-name {
+    width: 800px;
+    height: 35px;
+}
+
+#recipe-descriptions {
+    width: 800px;
+    height: 120px;
+}
+
+.recipe-input-wrapper {
+    padding: 5px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+label[for=recipe-name] {
+    width: 180px;
+    margin-bottom: 20px;
+    font-size: 20px;
+
+}
+
+label[for=recipe-descriptions] {
+    margin-bottom: 110px;
+    width: 180px;
+    font-size: 20px;
+}
+
+button {
+    outline: none;
+    border: none;
+    background: inherit;
+}
+
+input {
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    border: 1px solid $color-grey;
+}
+
+.new-recipe-description-box {
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    padding-left: 10px;
+}
+
+button {
+    overflow: hidden;
+    outline: none;
+    border: none;
+    background: inherit;
+}
+
+.recipe-instructions,
+.ingredients-section {
+    padding: 5px;
+    width: 450px;
+    height: 300px;
+}
+
+.recipe-instructions input,
+.ingredients-section input {
+    width: 392px;
+    height: 50px;
+}
+
+.fa-edit {
+    pointer-events: none;
+    color: $color-orange;
+
+    &:hover {
+        color: darken($color-orange, 20%);
+    }
+}
+
+.fa-trash-alt {
+    pointer-events: none;
+    color: $color-red;
+
+    &:hover {
+        color: darken($color-red, 20%);
+    }
+}
+
+.fa-plus-square {
+    color: $color-green;
+    font-size: 35px;
+
+    &:hover {
+        color: darken($color-green, 6%);
+
+        &:active {
+            color: darken($color-green, 20%);
+        }
+    }
+}
+
+.instructions-header,
+.ingredients-header {
+    font-size: 20px;
+}

@@ -1,0 +1,77 @@
+// CDN FONTAWESOME
+// <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+//
+// Sass:
+// https://fontawesome.com/how-to-use/on-the-web/using-with/sass
+
+@import 'generic/reset.scss';
+@import "settings/color.scss";
+@import "settings/fonts.scss";
+@import "header.scss";
+@import "about.scss";
+@import "carousel.scss";
+@import "call_to_action.scss";
+@import "features_main_page.scss";
+@import "elements/newsletter.scss";
+@import "elements/footer.scss";
+
+@import "./app_elements/nav_header.scss";
+@import "./app_elements/app_dashboard.scss";
+@import "./from.scss";
+
+@import "./app_elements/5.1_listy.scss";
+
+@import "./app_elements/new_recipe";
+@import "./app_elements/new_plan";
+
+@use "sass:color";
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $color-background;
+  font-family: $font-open-sans;
+  min-width: 1200px; //desktop 1200 px szerokościTelefonów, Smartphone – 480 px szerokości, Tabletów – 1024 px szerokości.
+  margin: 0 auto;
+  line-height: 1.25;
+}
+
+.container {
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+}
+
+.logo {
+  font-family: $font-charmonman; //nie podpięte
+}
+
+.btn {
+  background: $color-orange;
+  border: 1px solid $color-orange;
+  color: #fff;
+  transition: 0.2s;
+
+  &:hover {
+    background-color: darken($color-orange, 5%);
+    box-shadow: 1px 1px $color-grey;
+  }
+
+  &:active {
+    background-color: darken($color-orange, 15%);
+  }
+}
+
+.nav_a {
+  text-decoration: none;
+  color: white;
+}
+
+a {
+  color: white;
+}

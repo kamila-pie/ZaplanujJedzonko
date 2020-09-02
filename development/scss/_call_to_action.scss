@@ -1,0 +1,33 @@
+.cta-box {
+    height: 180px;
+    background-color: $color-header;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+}
+
+.cta-header {
+    font-size: 22px;
+    padding-bottom: 30px;
+}
+
+.cta-btn {
+    height: 50px;
+    width: 200px;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    background-color: $color-orange;
+    font-weight: 700;
+    transition: 0.2s;
+
+    &:hover {
+        background-color: darken($color-orange, 5%);
+        box-shadow: 1px 1px $color-grey;
+    }
+
+    &:active {
+        background-color: darken($color-orange, 15%);
+    }
+}

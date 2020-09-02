@@ -1,0 +1,33 @@
+.features-box {
+    height: 360px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: $color-deep-grey;
+}
+
+.feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.features-img {
+    height: 65px;
+    width: 65px;
+    opacity: lightness($color-deep-grey);
+}
+
+.feature-header {
+    font-size: 22px;
+    font-weight: 400;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: lightness($color-deep-grey);
+}
+
+.feature-text {
+    font-size: 16px;
+    color: lightness($color-deep-grey);
+}

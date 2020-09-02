@@ -1,0 +1,41 @@
+.about__background {
+    background-color: $color-background;
+    display: flex;
+    justify-content: space-between;
+    padding: 100px
+}
+
+.about__img {
+    height: 350px;
+    min-width: 300px;
+    background-color: grey;
+    background-image: url(https://i.wpimg.pl/O/392x330/d.wpimg.pl/1765002578-1168852151/krystyna-feldman.jpg);
+    background-size: cover;
+
+    &:hover {
+        content: "";
+        height: 350px;
+        min-width: 300px;
+        background-image: url(https://www.blasty.pl/m/upload/images/large/2019/12/zulietta-laska-menelka-zul-zulica_2019-12-05_16-17-55.jpg);
+        background-size: cover;
+    }
+
+}
+
+.about__title {
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 50px;
+}
+
+.about__text {
+    margin-left: 120px;
+}
+
+.about__text-info {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+
+
+}

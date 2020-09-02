@@ -1,0 +1,23 @@
+.newsletter {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background: $color-deep-grey;
+  color: $color-background;
+  padding-right: 20px;
+  padding-top: 15px;
+  .newsletter_el {
+    padding: 10px;
+    font-weight: bold;
+    font-size: larger;
+    margin-top: 10px;
+  }
+  .btn {
+    width: 200px;
+    margin-top: 7px;
+    margin-left: 20px;
+    background-color: $color-orange;
+    height: 50px;
+    border: none;
+  }
+}

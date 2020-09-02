@@ -1,0 +1,366 @@
+@use "sass:color";
+
+.new-plan-box {
+    // height: 700px;
+    max-width: 1100px;
+    border: 1px dashed $color-deep-grey;
+    margin: 20px;
+    // margin-left: 50px;
+    // margin-top: 50px;
+    background-color: $color-background;
+    color: $color-grey;
+    padding: 20px;
+}
+
+#myModal,
+#myModalPlan,
+#myModalNoRecipes{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 150px;
+    top: 80px;
+    width: calc(100vw - 150px);
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.new-plan-save-button {
+    background-color: $color-orange;
+    color: white;
+    padding: 10px;
+    font-weight: 700;
+    transition: 0.2s;
+
+    &:hover {
+        background-color: darken($color-orange, 5%);
+        box-shadow: 1px 1px $color-grey;
+    }
+
+    &:active {
+        background-color: darken($color-orange, 15%);
+    }
+}
+
+.new-plan-main-header {
+    color: $color-orange;
+    font-size: 30px;
+}
+
+.new-plan-header-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 6px;
+    border-bottom: 3px solid $color-grey;
+}
+
+.new-plan-description-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+textarea {
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border: 1px solid $color-grey;
+    resize: none;
+    width: 80%;
+    font-family: $font-open-sans;
+}
+
+.new-recipe-description-box {
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    padding-left: 10px;
+}
+
+#plan-name {
+    width: 800px;
+    height: 35px;
+}
+
+#plan-week-number {
+    width: 800px;
+    height: 35px;
+}
+
+#plan-descriptions {
+    width: 800px;
+    height: 110px;
+}
+
+.plan-input-wrapper {
+    padding: 5px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+label[for=plan-name] {
+    width: 180px;
+    margin-bottom: 20px;
+    font-size: 20px;
+
+}
+
+label[for=plan-descriptions] {
+    margin-bottom: 110px;
+    width: 180px;
+    font-size: 20px;
+}
+
+label[for=plan-week-number] {
+    margin-bottom: 30px;
+    width: 180px;
+    font-size: 20px;
+}
+
+button {
+    overflow: hidden;
+    outline: none;
+    border: none;
+    background: inherit;
+}
+
+input {
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    border: 1px solid $color-grey;
+}
+
+.plan-headers-box {
+    height: 40px;
+    font-size: 20px;
+    font-weight: 700;
+    width: 100%;
+    padding: 40px 20px 40px 58px;
+    display: flex;
+    justify-content: space-evenly;
+    border-top: 1px solid lighten($color-grey, 20%);
+    border-bottom: 1px solid lighten($color-grey, 20%);
+    color: $color-deep-grey;
+    text-align: center;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.plan-details-input {
+    display: flex;
+    flex-direction: row;
+    justify-content: inherit;
+    padding: 10px;
+    border-bottom: 1px solid lighten($color-grey, 20%);
+}
+
+select {
+    width: 120px;
+    border-radius: 5px;
+    height: 30px;
+    color: lighten($color-deep-grey, 10%);
+    border: 1px solid $color-grey
+}
+
+select#zupa-poniedzialek,
+select#zupa-wtorek,
+select#zupa-sroda,
+select#zupa-czwartek,
+select#zupa-piatek,
+select#zupa-sobota,
+select#zupa-niedziela {
+    margin-left: 55px;
+    margin-right: 55px;
+}
+
+select#drugie-danie-poniedzialek,
+select#drugie-danie-wtorek,
+select#drugie-danie-sroda,
+select#drugie-danie-czwartek,
+select#drugie-danie-piatek,
+select#drugie-danie-sobota,
+select#drugie-danie-niedziela {
+    margin-right: 55px;
+}
+
+.plan-poniedzialek>label,
+.plan-wtorek>label,
+.plan-sroda>label,
+.plan-czwartek>label,
+.plan-piatek>label,
+.plan-sobota>label,
+.plan-niedziela>label {
+    width: 80px;
+    font-weight: 700;
+    text-align: center;
+    color: $color-deep-grey;
+}
+
+select#sniadanie-poniedzialek,
+select#sniadanie-wtorek,
+select#sniadanie-sroda,
+select#sniadanie-czwartek,
+select#sniadanie-piatek,
+select#sniadanie-sobota,
+select#sniadanie-niedziela {
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+select:hover {
+    background-color: lighten($color-grey, 30%);
+    box-shadow: 0.5px 0.5px $color-grey;
+}
+
+//======================= sekacja tabela ========================//
+.list__table {
+    margin: 10px 60px;
+    border-top: 2px solid rgba($color: #000000, $alpha: 0.1);
+    height: 80%;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    max-height: 10vh;
+    border: none;
+}
+
+.list__table-scrol-2 {
+    display: block;
+    overflow: auto;
+    max-height: 60vh;
+}
+
+td,
+th {
+    border-bottom: 2px solid rgba($color: #000000, $alpha: 0.1);
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    min-height: 50px;
+    max-height: 100px;
+    padding-top: 10px;
+    color: rgba($color: #000000, $alpha: 0.5);
+    font-weight: 800;
+    font-size: 20px;
+
+    &:nth-child(1) {
+        width: 55px;
+    }
+
+    &:nth-child(2) {
+        width: 210px;
+    }
+
+    &:nth-child(3) {
+        width: 1180px;
+    }
+
+    &:nth-child(4) {
+        width: 140px;
+    }
+
+    &:nth-child(5) {
+        width: 80px;
+    }
+}
+
+td {
+    padding-top: 10px;
+    color: rgba($color: #000000, $alpha: 0.5);
+
+    // stykizacja opisów
+    // &:nth-child(1) {
+    //     min-width: 45px;
+    //     width: 60px;
+    width: 65px;
+
+
+    &:nth-child(2) {
+        width: 210px;
+    }
+
+    &:nth-child(3) {
+        width: 1250px;
+    }
+
+    &:nth-child(4) {
+        width: 110px;
+    }
+
+    &:nth-child(5) {
+        min-width: 75px;
+        width: 80px;
+    }
+
+    //  stylizacja ikon
+    &:nth-child(5) button:nth-child(1) {
+        color: $color-yellow;
+        border: none;
+        outline: none;
+        background: inherit;
+        transition: 0.5s;
+        &:hover {
+            color: $color-yellow;
+            transform: scale(1.3);
+        }
+    }
+
+    &:nth-child(5) button:nth-child(2) {
+        color: $color-red;
+        border: none;
+        outline: none;
+        background: inherit;
+        transition: 0.5s;
+        &:hover {
+            transform: scale(1.3);
+            color: $color-red;
+        }
+    }
+.noRecipes {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px dashed $color-grey;
+    margin: 20px;
+    background-color: $color-background;
+    color: $color-grey;
+    padding: 20px;
+    position: relative;
+    .fa-window-close {
+        position: absolute;
+        top: 10px;
+        right: 8px;
+        color: $color-orange;
+    }
+    h1 {
+        font-size: large;
+        color: $color-grey;
+        font-weight: bold;
+        margin: 40px 0 15px;
+    }
+    p {
+        margin-bottom: 15px;
+    }
+    a {
+        height: 50px;
+        width: 200px;
+        color: white;
+        text-align: center;
+        font-family: $font-open-sans;
+        padding: 15px;
+        background-color: $color-orange;
+        margin: 20px 0 20px;
+    }
+}
+}

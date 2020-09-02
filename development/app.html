@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Zaplanuj Jedzonko</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/main.css" />
+    <script type="text/javascript">
+        function noenter() {
+            return !(window.event && window.event.keyCode == 13);
+        }
+    </script>
+    <script src="./js/app.js" defer></script>
+</head>
+
+<body>
+    <header class="header_app">
+        <a href="./index.html">
+            <h1 class="logo"><span class="logo-color">Zaplanuj</span>Jedzonko</h1>
+        </a>
+        <div class="user_app">
+            <span class="user_log_name"> Imię </span>
+            <i class="fa fa-2x fa-user-circle" aria-hidden="true"></i>
+        </div>
+    </header>
+
+    <div class="container">
+        <nav class="nav_desktop">
+            <ul class="nav_elements">
+                <a class="nav_a" href="./app.html"><li class="nav_el desktop">Pulpit</li></a>
+                <a class="nav_a" href="./recipes.html"><li class="nav_el recipe">Przepisy</li></a>
+                <a class="nav_a" href="./schedules.html"><li class="nav_el schedule">Plany</li></a>
+            </ul>
+        </nav>
+        <!-- // Welcome Form // -->
+        <div class="form__background">
+            <form>
+                <div class="form__info">
+                    <h2 class="form__title">Witaj,</h2>
+                    <p class="form__text1">wygląda na to że jesteś tutaj pierwszy raz!</p>
+                    <input value="" type="text" placeholder="tutaj wpisz jak masz na imię" class="form__input">
+                    <button class="from__button">Gotowe!</button>
+                    <p class="from__text2">Podaj nam swoje imię, a my zorganizujemy dla Ciebie naszą aplikację :)</p>
+                </div>
+            </form>
+        </div>
+        <!--      // New Recipe scalona  //-->
+        <section id="myModal">
+            <div class="new-recipe-box">
+                <form>
+                    <div class="new-recipe-header-box">
+                        <h1 class="new-recipe-main-header">NOWY PRZEPIS</h1>
+                        <button class="new-recipe-save-button">Zapisz i zamknij</button>
+                    </div>
+                    <div class="new-recipe-description-box">
+                        <div class="recipe-input-wrapper">
+                            <label for="recipe-name">Nazwa przepisu</label>
+                            <textarea maxlength="50" id="recipe-name"
+                                      placeholder="Wprowadź nazwę przepisu..."></textarea>
+                        </div>
+                        <div class="recipe-input-wrapper">
+                            <label for="recipe-descriptions">Opis przepisu</label>
+                            <textarea maxlength="360" id="recipe-descriptions"
+                                      placeholder="Wprowadź opis przepisu..."></textarea>
+                        </div>
+                    </div>
+                    <div class="recipe-ingredients-parent">
+                        <div class="recipe-instructions">
+                            <h1 class="instructions-header">INSTRUKCJE</h1>
+                            <input maxlength="150" id="recipe-instructions-input" placeholder="Dodaj instrukcje..." onkeypress="return noenter()"/>
+                            <button id="plus-instructions">
+                                <i class="fa fa-3x fa-plus-square"
+                                   aria-hidden="true"></i>
+                            </button>
+                            <ol class="instructions-list">
+                            </ol>
+                        </div>
+                        <div class="ingredients-section">
+                            <h1 class="ingredients-header">SKŁADNIKI</h1>
+                            <input maxlength="50" id="recipe-ingredients-input" placeholder="Dodaj składnik..." onkeypress="return noenter()"/>
+                            <button id="plus-ingredients">
+                                <i class="fa fa-3x fa-plus-square"
+                                   aria-hidden="true"></i>
+                            </button>
+                            <ol contenteditable="true" class="ingredients-list">
+                            </ol>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <!--    koniec sekcji recipie-->
+
+        <!-- -----Section app_dashboard------->
+        <section class="app_dashboard">
+            <div class="widgets">
+                <div class="widget_add recipe">
+                    <i class="fa fa-3x fa-plus-square" aria-hidden="true"></i>
+                    <p>dodaj przepis</p>
+                </div>
+                <div class="widget_add plan">
+                    <button><i class="fa fa-3x fa-plus-square" aria-hidden="true"></i></button>
+                    <p>dodaj plan</p>
+                </div>
+                <div class="notification_container">
+                    <div class="notification_el info">
+                        <i class="fa fa-info-circle" aria-hidden="true"></i>
+                        <p class="p_info"> Masz już 99 przepisów, nieźle!</p>
+                        <i class="fa fa-window-close info-x" aria-hidden="true"></i>
+                    </div>
+                    <div class="notification_el exclamation">
+                        <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                        <p class="p_exclamation">Pamietaj, aby dodać plan!</p>
+                        <i class="fa fa-window-close info-x" aria-hidden="true"></i>
+                    </div>
+                    <div class="notification_el check">
+                        <i class="fa fa-check-circle" aria-hidden="true"></i>
+                        <p class="p_check">Świetnie, że jesteś! Udanego planowania i smacznego! :)</p>
+                        <i class="fa fa-window-close info-x" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="week_schedule_container">
+                <h2 class="table_header">Twój plan na <span> nr_tygodnia </span> tydzień:</h2>
+                <div class="table_schedule">
+                    <div class="day monday">
+                        <h2>Poniedziałek</h2>
+                        <ul>
+                            <li>śniadanie</li>
+                            <li>drugie sniadanie</li>
+                            <li>zupa</li>
+                            <li>drugie danie</li>
+                            <li>kolacja</li>
+                        </ul>
+                    </div>
+                    <div class="day tue">
+                        <h2>Wtorek</h2>
+                        <ul>
+                            <li>śniadanie</li>
+                            <li>drugie sniadanie</li>
+                            <li>zupa</li>
+                            <li>drugie danie</li>
+                            <li>kolacja</li>
+                        </ul>
+                    </div>
+                    <div class="day wed">
+                        <h2>Środa</h2>
+                        <ul>
+                            <li>śniadanie</li>
+                            <li>drugie sniadanie</li>
+                            <li>zupa</li>
+                            <li>drugie danie</li>
+                            <li>kolacja</li>
+                        </ul>
+                    </div>
+                    <div class="day thur">
+                        <h2>Czwarte</h2>
+                        <ul>
+                            <li>śniadanie</li>
+                            <li>drugie sniadanie</li>
+                            <li>zupa</li>
+                            <li>drugie danie</li>
+                            <li>kolacja</li>
+                        </ul>
+                    </div>
+                    <div class="day friday">
+                        <h2>Piatek</h2>
+                        <ul>
+                            <li>śniadanie</li>
+                            <li>drugie sniadanie</li>
+                            <li>zupa</li>
+                            <li>drugie danie</li>
+                            <li>kolacja</li>
+                        </ul>
+                    </div>
+                    <div class="day saturday">
+                        <h2>Sobota</h2>
+                        <ul>
+                            <li>śniadanie</li>
+                            <li>drugie sniadanie</li>
+                            <li>zupa</li>
+                            <li>drugie danie</li>
+                            <li>kolacja</li>
+                        </ul>
+                    </div>
+                    <div class="day sunday">
+                        <h2>Niedziela</h2>
+                        <ul>
+                            <li>śniadanie</li>
+                            <li>drugie sniadanie</li>
+                            <li>zupa</li>
+                            <li>drugie danie</li>
+                            <li>kolacja</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="table_switch">
+                    <div class="table_switch_el">
+                        <i class="fa fa-1x fa-angle-double-left" aria-hidden="true"></i>
+                        <p>poprzedni</p>
+                    </div>
+                    <div class="table_switch_el">
+                        <p>następny</p>
+                        <i class="fa fa-1x fa-angle-double-right" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="myModalPlan">
+            <div class="new-plan-box">
+                <form id="add-schedule">
+                    <div class="new-plan-header-box">
+                        <h1 class="new-plan-main-header">NOWY PLAN</h1>
+                        <button class="new-plan-save-button">Zapisz i zamknij</button>
+                    </div>
+                    <div class="new-plan-description-box">
+                        <div class="plan-input-wrapper">
+                            <label for="plan-name">Nazwa planu</label>
+                            <textarea id="plan-name"
+                                      placeholder="Wprowadź nazwę planu..." maxlength="50"></textarea>
+                        </div>
+                        <div class="plan-input-wrapper">
+                            <label for="plan-descriptions">Opis planu</label>
+                            <textarea id="plan-descriptions"
+                                      placeholder="Wprowadź opis planu..." maxlength="360"></textarea>
+                        </div>
+                        <div class="plan-input-wrapper">
+                            <label for="plan-week-number">Numer tygodnia</label>
+                            <input id="plan-week-number" placeholder="Wprowadź # tygodnia..." type="number"  min="1"/>
+                        </div>
+                        <div class="plan-headers-box">
+                            <h1>Śniadanie</h1>
+                            <h1>Drugie<br>Śniadanie</h1>
+                            <h1>Zupa</h1>
+                            <h1>Drugie <br> Danie</h1>
+                            <h1>Kolacja</h1>
+                        </div>
+                        <div class="plan-details-box">
+                            <div class="plan-details-input plan-poniedzialek">
+                                <label for="select-poniedzialek">Poniedziałek</label>
+                                <select name="select-poniedzialek select-poniedzialek-sniadanie"
+                                        id="sniadanie-poniedzialek">
+                                </select>
+                                <select name="select-poniedzialek select-poniedzialek-drugie-sniadanie"
+                                        id="drugie-sniadanie-poniedzialek">
+                                </select>
+                                <select name="select-poniedzialek select-poniedzialek-zupa"
+                                        id="zupa-poniedzialek">
+                                </select>
+                                <select name="select-poniedzialek select-poniedzialek-drugie-danie"
+                                        id="drugie-danie-poniedzialek">
+                                </select>
+                                <select name="select-poniedzialek select-poniedzialek-kolacja"
+                                        id="poniedzialek-kolacja">
+                                </select>
+                            </div>
+                            <div class="plan-details-input plan-wtorek">
+                                <label for="select-wtorek">Wtorek</label>
+                                <select name="select-wtorek select-wtorek-sniadanie"
+                                        id="sniadanie-wtorek">
+                                </select>
+                                <select name="select-wtorek select-wtorek-drugie-sniadanie"
+                                        id="drugie-sniadanie-wtorek">
+                                </select>
+                                <select name="select-wtorek select-wtorek-zupa"
+                                        id="zupa-wtorek">
+                                </select>
+                                <select name="select-wtorek select-wtorek-drugie-danie"
+                                        id="drugie-danie-wtorek">
+                                </select>
+                                <select name="select-wtorek select-wtorek-kolacja"
+                                        id="wtorek-kolacja">
+                                </select>
+                            </div>
+                            <div class="plan-details-input plan-sroda">
+                                <label for="select-sroda">Środa</label>
+                                <select name="select-sroda select-sroda-sniadanie"
+                                        id="sniadanie-sroda">
+                                </select>
+                                <select name="select-sroda select-sroda-drugie-sniadanie"
+                                        id="drugie-sniadanie-sroda">
+                                </select>
+                                <select name="select-sroda select-sroda-zupa"
+                                        id="zupa-sroda">
+                                </select>
+                                <select name="select-sroda select-sroda-drugie-danie"
+                                        id="drugie-danie-sroda">
+                                </select>
+                                <select name="select-sroda select-sroda-kolacja"
+                                        id="sroda-kolacja">
+                                </select>
+                            </div>
+                            <div class="plan-details-input plan-czwartek">
+                                <label for="select-czwartek">Czwartek</label>
+                                <select name="select-czwartek select-czwartek-sniadanie"
+                                        id="sniadanie-czwartek">
+                                </select>
+                                <select name="select-czwartek select-czwartek-drugie-sniadanie"
+                                        id="drugie-sniadanie-czwartek">
+                                </select>
+                                <select name="select-czwartek select-czwartek-zupa"
+                                        id="zupa-czwartek">
+                                </select>
+                                <select name="select-czwartek select-czwartek-drugie-danie"
+                                        id="drugie-danie-czwartek">
+                                </select>
+                                <select name="select-czwartek select-czwartek-kolacja"
+                                        id="czwartek-kolacja">
+                                </select>
+                            </div>
+                            <div class="plan-details-input plan-piatek">
+                                <label for="select-piatek">Piątek</label>
+                                <select name="select-piatek select-piatek-sniadanie"
+                                        id="sniadanie-piatek">
+                                </select>
+                                <select name="select-piatek select-piatek-drugie-sniadanie"
+                                        id="drugie-sniadanie-piatek">
+
+                                </select>
+                                <select name="select-piatek select-piatek-zupa"
+                                        id="zupa-piatek">
+                                </select>
+                                <select name="select-piatek select-piatek-drugie-danie"
+                                        id="drugie-danie-piatek">
+                                </select>
+                                <select name="select-piatek select-piatek-kolacja"
+                                        id="piatek-kolacja">
+                                </select>
+                            </div>
+                            <div class="plan-details-input plan-sobota">
+                                <label for="select-sobota">Sobota</label>
+                                <select name="select-sobota select-sobota-sniadanie"
+                                        id="sniadanie-sobota">
+                                </select>
+                                <select name="select-sobota select-sobota-drugie-sniadanie"
+                                        id="drugie-sniadanie-sobota">
+                                </select>
+                                <select name="select-sobota select-sobota-zupa"
+                                        id="zupa-sobota">
+                                </select>
+                                <select name="select-sobota select-sobota-drugie-danie"
+                                        id="drugie-danie-sobota">
+                                </select>
+                                <select name="select-sobota select-sobota-kolacja"
+                                        id="sobota-kolacja">
+                                </select>
+                            </div>
+                            <div class="plan-details-input plan-niedziela">
+                                <label for="select-niedziela">Niedziela</label>
+                                <select name="select-niedziela select-niedziela-sniadanie"
+                                        id="sniadanie-niedziela">
+                                </select>
+                                <select name="select-niedziela select-niedziela-drugie-sniadanie"
+                                        id="drugie-sniadanie-niedziela">
+                                </select>
+                                <select name="select-niedziela select-niedziela-zupa"
+                                        id="zupa-niedziela">
+                                </select>
+                                <select name="select-niedziela select-niedziela-drugie-danie"
+                                        id="drugie-danie-sroda">
+                                </select>
+                                <select name="select-niedziela select-niedziela-kolacja"
+                                        id="niedziela-kolacja">
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <div class="noRecipes">
+            <button class="fa fa-window-close noRecipesX" ></button>
+            <h1>Nie masz jeszcze żadnych przepisów. </h1>
+            <p>Dodaj przepisy aby stworzyć nowy plan.</p>
+            <a class="btnNoRecipes" href="app.html"> Dodaj przepis </a>
+        </div>
+    </div>
+
+</body>
+</html>

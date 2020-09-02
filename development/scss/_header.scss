@@ -1,0 +1,34 @@
+.header__background {
+    height: 80px;
+    background-color: $color-deep-grey;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%
+}
+
+.logo {
+    font-size: 40px;
+    font-weight: 600;
+    color: #E58A20;
+}
+
+.logo-color {
+    color: white;
+}
+
+
+.header__nav {
+    display: flex;
+}
+
+.header__link {
+    margin-right: 20px;
+    text-transform: uppercase;
+    color: white;
+
+    &:hover {
+        content: "";
+        color: #E58A20;
+    }
+}

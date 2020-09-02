@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Zaplanuj Jedzonko</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/main.css" />
+    <script src="./js/recipes.js"  defer></script>
+</head>
+
+<body>
+    <header class="header_app">
+        <a href="./index.html">
+            <h1 class="logo"><span class="logo-color">Zaplanuj</span>Jedzonko</h1>
+        </a>
+        <div class="user_app">
+            <span class="user_log_name"> Imię </span>
+            <i class="fa fa-2x fa-user-circle" aria-hidden="true"></i>
+        </div>
+    </header>
+
+    <div class="container">
+        <nav class="nav_desktop">
+            <ul class="nav_elements">
+                <a class="nav_a" href="./app.html"><li class="nav_el desktop">Pulpit</li></a>
+                <a class="nav_a" href="./recipes.html"><li class="nav_el recipe">Przepisy</li></a>
+                <a href="./schedules.html"><li class="nav_el schedule">Plany</li></a>
+            </ul>
+        </nav>
+        <div class="listy__background">
+            <div class="list__title">
+                <p class="list__title-text">LISTA PRZEPISÓW</p>
+                <button id="add-recipe-recipes" class="list__img"><i class="fa fa-3x fa-plus-square"
+                        aria-hidden="true"></i></button>
+            </div>
+            <div class="list__table">
+                <table>
+                    <tr>
+                        <th>ID</th>
+                        <th>NAZWA</th>
+                        <th>OPIS</th>
+                        <th>AKCJE</th>
+                    </tr>
+                </table>
+                <table class="list__table-scrol">
+
+                </table>
+
+            </div>
+        </div>
+
+    </div>
+
+    </div>
+    <!--      // New Recipe scalona  //-->
+    <section id="myModal">
+        <div class="new-recipe-box">
+            <form>
+                <div class="new-recipe-header-box">
+                    <h1 class="new-recipe-main-header">NOWY PRZEPIS</h1>
+                    <button class="new-recipe-save-button">Zapisz i zamknij</button>
+                </div>
+                <div class="new-recipe-description-box">
+                    <div class="recipe-input-wrapper">
+                        <label for="recipe-name">Nazwa przepisu</label>
+                        <textarea id="recipe-name" placeholder="Wprowadź nazwę przepisu..." maxlength="50"></textarea>
+                    </div>
+                    <div class="recipe-input-wrapper">
+                        <label for="recipe-descriptions">Opis przepisu</label>
+                        <textarea id="recipe-descriptions" placeholder="Wprowadź opis przepisu..."
+                            maxlength="360"></textarea>
+                    </div>
+                </div>
+
+                <div class="recipe-ingredients-parent">
+                    <div class="recipe-instructions">
+                        <h1 class="instructions-header">INSTRUKCJE</h1>
+                        <input maxlength="150" id="recipe-instructions-input" placeholder="Dodaj instrukcje..."
+                            onkeypress="return noenter()" />
+                        <button id="plus-instructions">
+                            <i class="fa fa-3x fa-plus-square" aria-hidden="true"></i>
+                        </button>
+                        <ol class="instructions-list">
+                        </ol>
+                    </div>
+                    <div class="ingredients-section">
+                        <h1 class="ingredients-header">SKŁADNIKI</h1>
+                        <input maxlength="50" id="recipe-ingredients-input" placeholder="Dodaj składnik..."
+                            onkeypress="return noenter()" />
+                        <button id="plus-ingredients">
+                            <i class="fa fa-3x fa-plus-square" aria-hidden="true"></i>
+                        </button>
+                        <ol contenteditable="true" class="ingredients-list">
+                        </ol>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    <!--    koniec sekcji recipie-->
+    <!--okno noRecipes -->
+    <section id="myModalNoRecipes">
+        <div class="noRecipes" style="display: none">
+            <button class="fa fa-window-close"></button>
+            <h1>Nie masz jeszcze żadnych przepisów. </h1>
+            <p>Dodaj przepisy aby stworzyć nowy plan.</p>
+            <a class="btnNoRecipes" href="app.html"> Dodaj przepis </a>
+        </div>
+    </section>
+</body>
+
+</html>
